@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:scrollIndicators="start|end|right">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left|bottom"
+        android:baselineAligned="false"
+        android:measureWithLargestChild="true"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/artist"
+            android:textSize="20sp"
+            android:textColor="#2e3033"
+            android:fontFamily="Roboto-Regular"
+            android:textStyle="bold"
+            android:layout_marginLeft="2sp"
+            android:layout_marginTop="2sp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/title"
+            android:textSize="16sp"
+            android:fontFamily="Roboto-Regular"
+            android:textColor="#2e3033"
+
+            android:layout_marginLeft="2sp"
+            android:layout_marginTop="2sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/duration"
+        android:textSize="16sp"
+        android:fontFamily="Roboto-Regular"
+        android:textColor="#2e3033"
+        android:gravity="right"
+        android:layout_marginRight="2sp"
+        android:layout_marginTop="2sp" />
+
+</LinearLayout>

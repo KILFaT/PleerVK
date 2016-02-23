@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">PleerVK</string>
+    <integer name="com_vk_sdk_AppId">5296851</integer>
+    <string name="action_settings">Settings</string>
+    <string name="artist">artist</string>
+    <string name="title">title</string>
+    <string name="artist_title">artist_title</string>
+    <string name="duration">duration</string>
+    <string name="audioCount">audioCount</string>
+
+    <plurals name="track_count">
+        <item quantity="zero">нет треков</item>
+        <item quantity="one">%1$d трек</item>
+        <item quantity="two">%1$d трека</item>
+        <item quantity="few">%1$d трека</item>
+        <item quantity="many">%1$d треков</item>
+        <item quantity="other">%1$d треков</item>
+    </plurals>
+    <string name="code_request_name_count">
+        var user=API.users.get();
+        if(user.count!=0){
+            var user_id=user@.id;
+            var first_name=user@.first_name;
+            var last_name=user@.last_name;
+            var audioCount=API.audio.getCount({"owner_id": user_id});
+            if(audioCount!=null){
+                return {"audioCount":audioCount, "user_id":user_id,
+                "first_name":first_name, "last_name":last_name};
+            }
+        return {"audioCount":null, "user_id":null, "first_name":null, "lastName":null};
+        }
+    </string>
+    <string name="code_request_audio">
+        var user=API.users.get();
+        if(user.count!=0){
+            var user_id=user@.id;
+            var audioCount=API.audio.getCount({"owner_id": user_id});
+            var offset=%1$d;
+            var count=%2$d;
+            var audioList=API.audio.get({"owner_id": user_id, "offset": offset , "count": count});
+            if(audioList!=null){
+                var audioRemain=audioCount-(offset+count);
+                return {"audioList":audioList, "audioCount": audioCount,"audioRemain": audioRemain };
+            }
+        }
+        return {"audioList":null, "audioCount": null,"audioRemain": null};
+    </string>
+
+</resources>
